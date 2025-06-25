@@ -38,3 +38,24 @@ Base.metadata.create_all(bind=db)
 
 #CRUD
 
+
+#Create
+# usuario = Usuario(nome='lira', email = 'qlqcoisa@email.com', senha = '123')
+# session.add(usuario)
+# session.commit()
+
+#Read
+usuario_lira = session.query(Usuario).filter_by(email = 'qlqcoisa@email.com').first()
+
+# livro = Livro(titulo="Nome do Vento", qtde_paginas=1000, dono=usuario_lira.id)
+# session.add(livro)
+# session.commit()
+
+#Update
+usuario_lira.nome = "SamuelRx"
+session.add(usuario_lira)
+session.commit()
+
+#Delete
+session.delete(usuario_lira)
+session.commit()
